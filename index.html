@@ -1,12 +1,288 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
-</head>
-<body>
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Liam Water's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/badges.css" />
 
-    To start with nothing is everything.
-    
-</body>
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/carousel/carousel.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/carousel-item/carousel-item.js"
+    ></script>
+    <script
+      type="module"
+      src="/components/project-components.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="assets/css/extra.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+      <!-- Intro -->
+      <div id="intro">
+        <video
+          class="showreel-video"
+          id="showreel-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        ></video>
+
+        <script>
+          const video = document.getElementById("showreel-video");
+          video.play().catch((error) => {
+            console.error("Autoplay failed:", error);
+          });
+        </script>
+
+        <h1 class="">
+          Hey!<br />
+          I'm Liam
+        </h1>
+        <p>A Gameplay and UI programmer</p>
+        <ul class="actions">
+          <li>
+            <a
+              href="#header"
+              class="button icon solid solo fa-arrow-down scrolly"
+              >Continue</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Portfolio</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="index.html">Liam Waters</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="elements.html">Elements Reference</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a href="#" class="icon brands fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon brands fa-facebook-f"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main" class="main-index">
+        <!-- Featured Post -->
+        <article class="post featured">
+          <header class="major">
+            <h2><a href="#"> Top Projects </a></h2>
+            <p>Here are my favourite projects I've been able to work on!</p>
+          </header>
+          <sl-carousel
+            class="aspect-ratio"
+            navigation
+            pagination
+            style="--aspect-ratio: 16/9"
+            loop="true"
+            autoplay
+          >
+            <sl-carousel-item>
+              <!-- <img src="images/pws2.jpg" alt="" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <img src="images/wardogs.webp" alt="" />
+            </sl-carousel-item> -->
+          </sl-carousel>
+
+          <div class="article-decor"></div>
+        </article>
+
+               <h2
+            style="justify-self: center; text-align: center; padding: 1em; font-size: 1.5em"
+          >
+            Blogs
+          </h2>
+        
+        <article class="blog-quickview">
+            <sl-carousel
+            class="aspect-ratio featured-carousel scroll-hint"
+            navigation
+            loop
+            autoplay
+          >
+            <sl-carousel-item>
+              <div class="blog-cover">
+                <img src="images/pws2.jpg" alt="" />
+              </div>
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <div class="blog-cover">
+                <img src="images/pws2.jpg" alt="" />
+              </div>
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <div class="blog-cover">
+                <img src="images/pws2.jpg" alt="" />
+              </div>
+            </sl-carousel-item>
+          </sl-carousel>
+
+
+        </article>
+
+        <!-- Posts -->
+
+        <div class="project-header">
+          <h2
+            style="justify-self: center; text-align: center; padding-top: 1em"
+          >
+            Projects
+          </h2>
+        </div>
+
+        <category-selector
+          categories="Unreal Engine, Unity, Gameplay Programming, Multiplayer, Tooling, UI">
+        </category-selector>
+
+        <section class="posts">
+
+          <project-card
+            title="Totally normal farming game"
+            tags="Unreal Engine, Gameplay Programming"
+            description="A multiplayer dogfighting game made in Unreal Engine 5.2"
+            image="images/farminggame.jpeg"
+          ></project-card>
+
+          <project-card
+            title="Skill Tree Editor Plugin"
+            tags="Unity, Tooling, Solo"
+            description="A multiplayer dogfighting game made in Unreal Engine 5.2"
+            image="images/skilltreecover.jpeg"
+          ></project-card>
+        </section>
+
+        <article>
+          <sl-include src="./career-timeline.html"></sl-include>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section>
+          <form method="post" action="#">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Send Message" /></li>
+            </ul>
+          </form>
+        </section>
+        <section class="split contact">
+          <section>
+            <h3>Phone</h3>
+            <p><a href="#">(+44)07480 836282</a></p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p><a href="#">liamwaters15@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a href="#" class="icon brands alt fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands alt fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands alt fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands alt fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
