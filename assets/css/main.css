@@ -186,7 +186,6 @@ input, select, textarea {
 		line-height: 1.5;
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
-		margin: 0 0 1rem 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -204,7 +203,6 @@ input, select, textarea {
 	h2 {
 		font-size: 1.75rem;
 		line-height: 1.3;
-		margin: 0 0 1.5rem 0;
 	}
 
 	h3 {
@@ -2945,7 +2943,7 @@ input, select, textarea {
 		}
 
 		header.major {
-			margin: 0 0 4rem 0;
+			margin: 0 0 1rem 0;
 			text-align: center;
 		}
 
@@ -3516,8 +3514,7 @@ input, select, textarea {
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		height: 20rem;
-		padding-bottom: 8rem;
+		height: 8rem;
 		position: relative;
 		text-align: center;
 		z-index: 2;
@@ -3767,14 +3764,10 @@ input, select, textarea {
 	}
 
 		#main > * {
-			padding: 0rem 2rem 2rem 2rem ;
+			padding: 0rem 2rem .5rem 2rem ;
 			border-top: solid 2px #eeeeee;
 			margin: 0;
 		}
-
-			#main > *:first-child {
-				border-top: 0;
-			}
 
 		#main > footer {
 			text-align: center;
