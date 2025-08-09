@@ -8,24 +8,37 @@ class CategorySelector extends HTMLElement {
         this.categories = categoryAttr.split(',').map(category => category.trim());
         const categoriesHtml = 
         categoryAttr ? 
-        `${categoryAttr.split(',').map(category => `<sl-button id="${category.trim().replace(' ','-').toLowerCase()}"class="tags">${category.trim()}</sl-button>`).join(' ')}` 
+        `${categoryAttr.split(',').map(category => `<button id="${category.trim().replace(' ','-').toLowerCase()}"class="category-button">${category.trim()}</button>`).join(' ')}` 
         : '';
 
         this.innerHTML = `
+
+        <div class="category-section">
+
+        <input type="checkbox" class="ToggleNDA" id="ToggleNDA">
+        <label for="ToggleNDA" class="ToggleNDA">Hide non-disclosed projects</label>
+
         <div class="sorting-buttons">
-          <sl-button-group label="Alignment" class="button-group">
             ${categoriesHtml}
-          </sl-button-group>
+        </div>
         </div>
         `;
 
-        this.querySelectorAll('sl-button').forEach(button => {
+        this.querySelector('.ToggleNDA').addEventListener('change', (e) => {
+            this.dispatchEvent(new CustomEvent('toggle-nda', {
+                detail: { isChecked : e.target.checked },
+                bubbles: true,
+                composed: true
+            }));
+        });
+        
+        this.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', () => {
                 let selectedCategory = button.id;
 
                 button.classList.contains('selected') ? selectedCategory = 'all' : selectedCategory = button.id;
 
-                this.querySelectorAll('sl-button').forEach(btn => btn.classList.remove('selected'));
+                this.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
                 
                 if (selectedCategory != 'all') {
                   button.classList.add('selected');

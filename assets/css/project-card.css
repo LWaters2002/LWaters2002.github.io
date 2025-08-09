@@ -1,0 +1,149 @@
+
+/* Define CSS variables for badge colors */
+:root {
+    --unreal-engine: #374653;
+    --unity: #FF6347;
+    --web-development: #32CD32;
+    --game-development: #FFD700;
+    --multiplayer: #FF4500;
+    --mobile-development: #FF8C00;
+    --gameplay-programming: #8B008B;
+    --tooling: #3e833e;
+}
+
+/* PROJECT CARD */
+
+.posts{
+    padding: 0 2vw !important;
+
+    @media screen and (max-width: 736px) {
+        padding: 0 !important;
+    }
+}
+
+project-card {
+    padding: 1vh 1vw !important;
+}
+
+.project-card{
+    background-color: whitesmoke;
+    padding: 0px;
+
+    align-self: center;
+    justify-self: center !important;
+
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+    min-height: 100%;
+
+    align-content: flex-start;
+
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 2px;
+
+    img {
+        border-radius: 12px;
+    }
+
+    p {
+        word-spacing: normal;
+        text-align: left;
+        line-height: normal;
+    }
+
+    h2{
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+}
+
+project-card.hidden{
+    display: none;
+}
+
+/* BADGES */
+.tag-group{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    gap:0px;
+    display: flex;
+    font-size: SMALL;
+    flex-wrap:wrap;
+    overflow-x: scroll;
+}
+
+#read-more-box{
+    display: grid;
+    align-self: center;
+    grid-template-columns: 75% 25%;
+    gap: 4px;
+    margin-top: auto;
+    justify-self: flex-end !important;
+}
+
+.read-more-button{
+    width: fit-content;
+    max-height: fit-content;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #b3ffb3;
+
+    * {
+        margin: auto;
+    }
+}
+
+.read-more-button:hover{
+    background-color: #fce2c5;
+}
+
+sl-badge{
+    padding: 0px;
+}
+
+sl-badge::part(base){
+    border-radius: 8px;
+}
+/* Assign colors to each badge by ID */
+sl-badge#unreal-engine::part(base) {
+    background-color: var(--unreal-engine);
+}
+
+sl-badge#unity::part(base) {
+    background-color: var(--unity);
+}
+
+sl-badge#web-development::part(base) {
+    background-color: var(--web-development);
+}
+
+sl-badge#game-development::part(base) {
+    background-color: var(--game-development);
+}
+
+sl-badge#multiplayer::part(base) {
+    background-color: var(--multiplayer);
+}
+
+sl-badge#mobile-development::part(base) {
+    background-color: var(--mobile-development);
+}
+
+sl-badge#gameplay-programming::part(base) {
+    background-color: var(--gameplay-programming);
+}
+
+sl-badge#tooling::part(base) {
+    background-color: var(--tooling);
+}

@@ -2620,7 +2620,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 2.5rem 0;
+			margin: 1rem 0;
 			width: 100%;
 		}
 
@@ -3234,10 +3234,10 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #a72222;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(184, 86, 86, 0.329), rgba(240, 191, 31, 0.466)), url("../../images/bg.jpg");
+			background-image: url("../../images/pic07.jpg"), linear-gradient(0deg, rgba(184, 86, 86, 0.329), rgba(240, 191, 31, 0.466)), url("../../images/pic02.jpg");
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
+			background-repeat: no-repeat,								repeat,													repeat;
 			background-attachment: scroll,								scroll,														scroll;
 			z-index: -1;
 		}
@@ -3724,6 +3724,7 @@ input, select, textarea {
 
 				#nav ul.links li.active {
 					background-color: #ffffff;
+					height: 100%;
 				}
 
 					#nav ul.links li.active a {
@@ -3766,7 +3767,7 @@ input, select, textarea {
 	}
 
 		#main > * {
-			padding: 4rem 4rem 2rem 4rem ;
+			padding: 2rem 2rem 2rem 2rem ;
 			border-top: solid 2px #eeeeee;
 			margin: 0;
 		}
@@ -3855,13 +3856,9 @@ input, select, textarea {
 			}
 
 			#main > .posts > * {
-				width: 50%;
-			}
-
-			#main > .posts > * {
 				aspect-ratio: 3 / 4;
 				padding: 1rem;
-				width: 50%;
+				width: 33%;
 			}
 
 			#main > .posts > article {
@@ -3897,7 +3894,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 480px) {
 
 				#main > .posts > * {
 					width: 100%;
@@ -3944,6 +3941,7 @@ input, select, textarea {
 
 			#main {
 				width: 100%;
+				max-width: none;
 			}
 
 		}
