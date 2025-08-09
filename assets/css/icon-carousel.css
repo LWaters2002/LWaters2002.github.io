@@ -1,0 +1,45 @@
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 1rem));
+    }
+}
+
+#icon-carousel{
+    padding: .5rem 0 !important;
+}
+
+.icon-carousel {
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+
+.icon-carousel:hover .icon-carousel-slide {
+    animation-play-state: paused;
+}
+
+.icon-carousel-slide {
+    display: flex;
+    width: max-content;
+    animation: 10s slide infinite linear;
+}
+
+.icon-carousel-slide img {
+    aspect-ratio: 1/1;
+    width: min(12vw, 4vh);
+    margin: 0 2vw;
+    flex-shrink: 0;
+}

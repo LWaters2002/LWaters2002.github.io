@@ -1,3 +1,3 @@
-import './project-card.js';
 import './category-selector.js';
-import './project-modal.js'
+import './project-card.js';
+import './project-modal.js';
