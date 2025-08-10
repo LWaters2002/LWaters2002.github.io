@@ -25,10 +25,10 @@ class ProjectModal extends HTMLElement {
         document.body.style.overflow = 'auto'; // Re-enable scrolling
     }
 
-    updateInnerHTML(){
+    updateInnerHTML() {
 
-        const modalContent = this.currentProjectID == "" ? '' : 
-        `<sl-include src="subpages/${this.currentProjectID}.html"></sl-include>`;
+        const modalContent = this.currentProjectID == "" ? '' :
+            `<sl-include src="subpages/${this.currentProjectID}.html"></sl-include>`;
 
         console.log(`loading modal content page : ${this.currentProjectID}`);
 
@@ -45,19 +45,19 @@ class ProjectModal extends HTMLElement {
         `;
 
         const self = this;
-        
+
         this.querySelector(".close-modal").addEventListener('click', function () {
             self.closeModal();
         });
     }
 
-    bindEvents(){
+    bindEvents() {
 
         const self = this;
 
         // Handle back/forward navigation
         window.addEventListener('popstate', () => {
-            const projectId = window.location.hash.substring(1); 
+            const projectId = window.location.hash.substring(1);
             console.log(`project id : ${projectId}"`);
             if (projectId) self.openModal(projectId);
             else self.closeModal();
@@ -73,6 +73,11 @@ class ProjectModal extends HTMLElement {
             document.querySelectorAll('project-card')
                 .forEach(x => x.addEventListener("open-project-modal", (event) => {
                     self.openModal(event.detail.projectId);
+                }));
+
+            document.querySelectorAll('.blog-open-button')
+                .forEach(x => x.addEventListener("click", (event) => {
+                    self.openModal(event.target.getAttribute("blogID"));
                 }));
         });
     }

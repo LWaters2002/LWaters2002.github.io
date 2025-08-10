@@ -27,11 +27,12 @@ p {
         gap: 0;
     }
 
+    button {
+        justify-self: right;
+    }
 }
 
-.blog-overview>* {
-    min-height: 0;
-}
+
 
 #blog-img {
     display: block;
