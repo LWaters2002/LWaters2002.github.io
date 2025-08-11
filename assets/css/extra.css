@@ -111,10 +111,9 @@ category-selector {
     }
 
     @media screen and (max-width: 736px) {
-        font-size: small;
-        grid-template-columns: 100%;
+        display: flex;
+        flex-direction: column;
         gap:20px;
-        grid-template-rows: 20% 80%;
     }
 }
 
