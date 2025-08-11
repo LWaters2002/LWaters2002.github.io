@@ -73,13 +73,3 @@
   color: #d32f2f !important;
   transition: background 0.2s, color 0.2s;
 }
-
-/* Project Cards */
-.project-card {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
