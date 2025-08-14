@@ -32,6 +32,15 @@ p {
     }
 }
 
+.blog-open-button {
+    margin-left: auto;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.blog-desc {
+    line-height: 2em;
+}
 
 
 #blog-img {
