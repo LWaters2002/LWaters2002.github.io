@@ -123,6 +123,7 @@
 }
 
 #skill-box {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
