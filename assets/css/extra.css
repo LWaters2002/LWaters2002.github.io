@@ -12,7 +12,7 @@
 
 /* Showreel */
 
-.showreel-container{
+.showreel-container {
     display: flex;
     padding: .5rem;
 }
@@ -34,6 +34,10 @@
 
 .showreel-section {
     padding: 0 !important;
+}
+
+.posts {
+    background-color: hsl(34, 24%, 88%);
 }
 
 .project-config {
@@ -93,7 +97,8 @@ category-selector {
     height: fit-content;
     padding: 2rem 10%;
 
-    h5, h4 {
+    h5,
+    h4 {
         margin: 0 !important;
     }
 
@@ -104,7 +109,7 @@ category-selector {
     @media screen and (max-width: 736px) {
         display: flex;
         flex-direction: column;
-        gap:20px;
+        gap: 20px;
     }
 }
 
@@ -116,4 +121,3 @@ category-selector {
     aspect-ratio: 1/1 !important;
     border-radius: 24px;
 }
-

@@ -23,20 +23,19 @@
 
 /* Modal Content */
 .modal-content {
-  background: white;
+  background: rgb(240, 255, 224);
   width: 80%;
-  max-width: 1200px;
-  max-height: 90vh;
+  height: 95vh;
+  max-width: 1400px;
   min-height: 80vh;
   overflow-y: auto;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   position: relative;
   animation: modalFadeIn 0.3s ease;
 
     @media screen and (max-width: 736px) {
         width: 100%;
-        height: 90vh;
     }
 }
 
