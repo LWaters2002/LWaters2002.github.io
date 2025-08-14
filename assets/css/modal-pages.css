@@ -15,7 +15,6 @@
 .project-title-section {
     display: flex;
     gap: 12px;
-
     sl-badge {
         height: fit-content;
         align-self: center;
@@ -133,7 +132,8 @@
 
 .modal-writing {
     padding-top: 1em;
-    font-size: medium;
+    padding-bottom: 2em;
+    font-size: large;
     width: 80%;
     line-height: normal;
 

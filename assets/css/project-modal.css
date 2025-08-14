@@ -48,7 +48,7 @@
 .close-modal {
   z-index: 3;
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   font-size: 1.5rem;
@@ -62,8 +62,8 @@
 
     @media screen and (max-width: 736px) {
       top : auto;
-      right: 15px;
-      bottom : 15px;
+      right: 8px;
+      bottom : 8px;
   }
 }
 
