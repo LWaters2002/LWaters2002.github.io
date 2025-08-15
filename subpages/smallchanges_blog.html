@@ -1,16 +1,91 @@
 <link rel="stylesheet" href="assets/css/modal-pages.css" />
 
-<div>
+<div id="modal-main">
     <div class="project-head-section">
         <div class="project-title-section">
-            <h2>Easy Low Level Optimisations</h2>
+            <h4>A quick low level reference guide</h4>
         </div>
     </div>
-    <p>
-        This should cover 
-        - Byte Packing
-        - Struct Padding
-        - Dynamic array capacity/reservations and resizing
-        - Cache Alignment
-    <p>
+
+    <div class="modal-writing">
+        <h5>What is the purpose of this guide ?</h5>
+        <p>This serves to be a place to refer to concepts that you are already familiar with, this will most likely not
+            provide enough substance to teach you the topic as they are inherently complex.
+            However it's purpose is to nail down the core practical use cases and how to use them. The user still needs
+            to know when to use them.</p>
+
+        <br><br>
+        <h5>Cache Lines and Cache misses, The hidden losses and how Data orientated design can save you.</h5>
+        <br>
+        <p>
+            CPUs don’t fetch one piece of data at a time, they grab a block called a <strong>cache line</strong>
+            (typically 64 bytes).
+            This is important as fetching this cache line takes time, therefore we need to maximise the amount of data
+            we fetch at once in order to minimise the time we take before fetches.
+
+            This is commonly an issue when your iterating over data that is not contiguous in memory, this means that
+            all
+            your data is fragmented in a worst case scenario you could be hitting a cache miss in every line
+
+            <br><br>
+            <strong>So what should I do to reduce cache misses ? </strong>
+            <br><br>
+        <ul>
+            <li>Store data in blocks of contiguous memory; opt for arrays where you can</li>
+            <li>Use a struct of arrays as a go-to when dealing with frequently accessed data</li>
+            <li>pre-allocate memory where possible to avoid repeated allocations</li>
+            <li>Iterate over data in the order it's stored to maximise cache line usage</li>
+
+            <br><br>
+
+            Here is an example where this may be applied. <br>
+            Imagine we have a game with thousands of enemies, each one moving in a distinct in unique direction for the
+            sake of this example we'll assume a transform is just a vector ( 12 bytes ) for position.
+            <br><br>
+
+            <strong>Bad Example</strong>
+            <br>
+            <pre><code>
+                TLinkedList& enemy = GetEnemies();
+                for (auto enemy : enemies) 
+                {
+                    enemy.GetTransform() += GetRandomOffset();
+                }
+            </code></pre>
+            Here we’re looping over a linked list of enemies. Each node in a linked list is allocated separately in
+            memory ( heap allocation ), therefore even though "Transform" is only 12 bytes, the CPU has to jump around
+            memory to access each one.
+            This means almost every iteration can cause a cache miss, because the data isn’t stored contiguously.
+            The problem isn’t the size of the data—it’s the scattered layout that slows down the CPU.
+            <br><br>
+            <strong>Good Example</strong>
+            <br>
+            <pre><code>
+                EnemySystem& enemySystem = GetEnemySystem();
+                for (uint32 i = 0; i < enemySystem.transforms; ++i) 
+                {
+                    enemySystem.transforms[i] += GetRandomOffset();
+                }
+            </code></pre>
+
+            In this example, we’re using an array ( spefically a dynamic contiguous array) of transforms instead of a
+            linked list.
+            As the transforms are all stored next to each other in memory, the CPU can load an entire cache line
+            at once. That means that multiple transforms are fetched together, reducing cache misses. Iterating over the
+            array like this is much faster than jumping from node to node in a linked list,
+            even though the data we're iterating over is the same.
+
+        </ul>
+
+        </p>
+        <!-- 
+        <br><br>
+        <h5>Struct Padding and Bit Packing</h5>
+
+        <br><br>
+        <h5>The Dynamic arrays hidden threat - Resizing</h5> -->
+
+        <h5>More Coming soon...</h5>
+
+    </div>
 </div>
